@@ -1,0 +1,19 @@
+    - name: Check CPD CLI     
+      shell: cpd-cli version
+      register: result
+      ignore_errors: true    
+
+    - name: Install CPD CLI     
+      shell: |
+       rm -fr /tmp/cpdcli
+       mkdir /tmp/cpdcli
+       cd cpdcli
+       curl -L "https://github.com/IBM/cpd-cli/releases/download/v{{cpdcli.version}}/cpd-cli-linux-EE-{{cpdcli.version}}.tgz" -o "cpdcli.gz"
+       tar -xvf cpdcli.gz
+       cp -r cpd-cli-linux-EE-{{cpdcli.version}}-*/* /usr/local/bin
+      args:
+        executable: /bin/bash 
+        chdir: /tmp/
+      register: fileout     
+      become: true   
+      when: result is failed          

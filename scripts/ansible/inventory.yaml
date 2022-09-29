@@ -1,8 +1,8 @@
 workstations:
   hosts:
     host1:
-      ansible_host: 169.59.6.199
+      ansible_host: 52.117.94.167
       ansible_port: 2223
-      ansible_ssh_private_key_file: /Users/felixliang/Downloads/pem_ibmcloudvsi.pem
+      ansible_ssh_private_key_file: /Users/felixliang/Downloads/pem_ibmcloudvsi_3.pem
       ansible_user: itzuser
     

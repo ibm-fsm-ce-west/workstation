@@ -1,0 +1,41 @@
+    - name: Check awscli     
+      shell: aws --version
+      register: result
+      ignore_errors: true
+
+    - name: Install awscli     
+      poll: 60
+      shell: |
+       rm -fr /tmp/awscli
+       mkdir /tmp/awscli
+       cd awscli
+       curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+       unzip awscliv2.zip
+       sudo ./aws/install
+      args:
+        executable: /bin/bash 
+        chdir: /tmp/
+      register: fileout     
+      become: true
+      when: result is failed
+
+    - name: Check ROSA CLI     
+      shell: rosa version
+      register: result
+      ignore_errors: true
+
+    - name: Install rosa cli     
+      poll: 60
+      shell: |
+       rm -fr /tmp/rosacli
+       mkdir /tmp/rosacli
+       cd rosacli
+       curl "https://mirror.openshift.com/pub/openshift-v4/clients/rosa/latest/rosa-linux.tar.gz" -o "rosacli.gz"
+       tar -xvf rosacli.gz
+       mv rosa /usr/local/bin/
+      args:
+        executable: /bin/bash 
+        chdir: /tmp/
+      register: fileout     
+      become: true   
+      when: result is failed

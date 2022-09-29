@@ -48,7 +48,7 @@
         chdir: /tmp/
       register: fileout     
       become: true   
-      when: result is failed   
+      when: result is failed
 
 
     - name: Check OC CLI     
