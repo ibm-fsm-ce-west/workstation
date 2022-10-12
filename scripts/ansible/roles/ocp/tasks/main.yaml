@@ -11,8 +11,8 @@
        cd occli
        wget "https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/{{ocpcli.version}}/openshift-client-linux.tar.gz" -O "occli.gz"
        tar -xvf occli.gz
-       mv oc /usr/local/bin/
-       mv kubectl /usr/local/bin/
+       mv oc /usr/bin/
+       mv kubectl /usr/bin/
       args:
         executable: /bin/bash 
         chdir: /tmp/

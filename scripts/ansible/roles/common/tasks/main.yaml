@@ -15,4 +15,9 @@
   package: name=unzip state=present 
   become: true   
   when: ansible_facts['os_family'] == 'RedHat'  
+
+- name: Install wget
+  package: name=wget state=present 
+  become: true   
+  when: ansible_facts['os_family'] == 'RedHat'    
   

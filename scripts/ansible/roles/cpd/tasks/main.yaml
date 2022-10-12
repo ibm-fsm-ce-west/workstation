@@ -10,7 +10,7 @@
        cd cpdcli
        curl -L "https://github.com/IBM/cpd-cli/releases/download/v{{cpdcli.version}}/cpd-cli-linux-EE-{{cpdcli.version}}.tgz" -o "cpdcli.gz"
        tar -xvf cpdcli.gz
-       cp -r cpd-cli-linux-EE-{{cpdcli.version}}-*/* /usr/local/bin
+       cp -r cpd-cli-linux-EE-{{cpdcli.version}}-*/* /usr/bin
       args:
         executable: /bin/bash 
         chdir: /tmp/
