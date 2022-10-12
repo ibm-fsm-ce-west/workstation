@@ -9,7 +9,7 @@
        rm -fr /tmp/awscli
        mkdir /tmp/awscli
        cd awscli
-       curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+       wget "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -O "awscliv2.zip"
        unzip awscliv2.zip
        sudo ./aws/install
       args:
@@ -30,7 +30,7 @@
        rm -fr /tmp/rosacli
        mkdir /tmp/rosacli
        cd rosacli
-       curl "https://mirror.openshift.com/pub/openshift-v4/clients/rosa/latest/rosa-linux.tar.gz" -o "rosacli.gz"
+       wget "https://mirror.openshift.com/pub/openshift-v4/clients/rosa/latest/rosa-linux.tar.gz" -O "rosacli.gz"
        tar -xvf rosacli.gz
        mv rosa /usr/local/bin/
       args:

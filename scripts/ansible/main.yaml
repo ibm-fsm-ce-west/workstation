@@ -2,8 +2,7 @@
   hosts: workstations
   roles:
     - common
-    - ocp
     - docker
-    - rosa
     - cpd
+    - ocp
 

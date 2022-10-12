@@ -5,7 +5,7 @@ The ansible play books tested on Ubuntu 20 LTS.
 1. Update corresponding values in `scripts/ansible/inventory.yaml` 
 2. Run the playbook
 ```
-ansible-playbook -i scripts/ansible/inventory.yaml scripts/ansible/playbook.yaml
+ansible-playbook -i scripts/ansible/inventory.yaml scripts/ansible/main.yaml
 ```
 
 
